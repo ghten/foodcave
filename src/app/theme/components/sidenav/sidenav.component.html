@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" [fxLayoutAlign]="(settings.menuType != 'mini') ? 'space-between center' : 'center center'" class="sidenav-header">
+    <!--<a mat-raised-button color="accent" routerLink="/" (click)="closeSubMenus()" class="small-logo">H</a>-->
+    <a *ngIf="settings.menuType == 'default'" class="logo" routerLink="/" (click)="closeSubMenus()">
+        <img src="assets/icons/icon-72x72.png" class="transition-2">
+    </a>
+  </mat-toolbar>
+
+<perfect-scrollbar class="sidenav-menu-outer" [class.user-block-show]="settings.sidenavUserBlock">
+    <div id="vertical-menu">
+        <app-vertical-menu [menuItems]="menuItems" [menuParentId]="0"></app-vertical-menu>
+    </div>
+</perfect-scrollbar>

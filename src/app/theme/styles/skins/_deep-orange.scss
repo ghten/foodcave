@@ -1,0 +1,6 @@
+
+$deep-orange-primary: mat-palette($mat-deep-orange,500, 300, 800);
+$deep-orange-accent: mat-palette($mat-amber, A200, A100, A700);
+$deep-orange-warn: mat-palette($mat-red, A200);
+
+$deep-orange-theme: mat-light-theme($deep-orange-primary, $deep-orange-accent,$deep-orange-warn);

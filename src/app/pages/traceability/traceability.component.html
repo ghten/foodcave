@@ -1,0 +1,25 @@
+<a mat-raised-button color="accent" [routerLink]="['/photo']" class="m-1">Prendre photo</a>
+
+<div fxLayout="row wrap">
+  <mat-card class="p-0" fxFlex="100">
+    <mat-card-title class="text-center"><h2>Traçabilité</h2></mat-card-title>
+
+    <mat-card-content>
+      <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-1">
+        <mat-form-field>
+          <mat-label>Date des photos</mat-label>
+          <input matInput [matDatepicker]="picker1" placeholder="Date des photos" (dateChange)="selectChanged($event)">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div fxLayout="row wrap">
+  <mat-card fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-1" *ngFor="let result of results">
+      <mat-card-content>
+        <img fxFlex="100" [src]="photoUrl + result.name" class="transition-2">
+      </mat-card-content>
+  </mat-card>
+</div>

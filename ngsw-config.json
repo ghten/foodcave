@@ -1,0 +1,48 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/managelgcave/foodcave/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/managelgcave/foodcave/favicon.ico",
+          "/managelgcave/foodcave/index.html",
+          "/managelgcave/foodcave/manifest.webmanifest",
+          "/managelgcave/foodcave/*.css",
+          "/managelgcave/foodcave/*.js"
+        ],
+        "urls": [
+          "https://lagrandecavevt.com/managelgcave/foodcave/upload/**",
+          "https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap",
+          "https://fonts.googleapis.com/icon?family=Material+Icons"
+        ]
+      }
+    }, {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/managelgcave/foodcave/assets/**",
+          "/managelgcave/foodcave/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "foodcave-api",
+      "urls": [
+        "https://lagrandecavevt.com/managelgcave/api/**"
+      ],
+      "cacheConfig": {
+        "maxSize": 20,
+        "maxAge": "30d",
+        "timeout": "5s",
+        "strategy": "freshness"
+      }
+    }
+  ]
+}

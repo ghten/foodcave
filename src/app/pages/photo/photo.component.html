@@ -1,0 +1,15 @@
+<app-camera (pictureTaken)="handleImage($event)"></app-camera>
+
+
+
+<mat-card class="snapshot" *ngIf="webcamImage">
+  <mat-card-content class="text-center">
+    <img [src]="webcamImage.imageAsDataUrl" />
+  </mat-card-content>
+  <mat-card-actions fxLayoutAlign="center center" class="m-1">
+    <button mat-raised-button color="primary" class="m-1" (click)= "save()">
+       Sauver
+    </button>
+  </mat-card-actions>
+
+</mat-card>

@@ -1,0 +1,17 @@
+<mat-card>
+	<mat-card-content class="text-center">
+		<webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+		 [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable" [videoOptions]="videoOptions" (cameraSwitched)="cameraWasSwitched($event)"
+		 (initError)="handleInitError($event)"></webcam>
+		<br/>
+  </mat-card-content>
+  <mat-card-actions fxLayout="row wrap">
+    <button mat-button fxFlex="100" class="actionBtn" (click)="triggerSnapshot();" title="Prendre photo">📸</button>
+		<!--<button mat-button fxFlex="100" class="actionBtn" (click)="showNextWebcam(true);" title="Switch Camera">🔁</button>-->
+  </mat-card-actions>
+</mat-card>
+
+<h4 *ngIf="errors.length > 0">Messages:</h4>
+<ul *ngFor="let error of errors">
+	<li>{{error | json}}</li>
+</ul>

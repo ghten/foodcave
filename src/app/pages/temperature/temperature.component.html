@@ -1,0 +1,41 @@
+<a mat-raised-button color="accent" (click)="setTemperature()" class="m-1">Sauver température</a>
+
+<div fxLayout="row wrap" class="m-1" *ngIf="isHidden">
+  <mat-card class="p-0" fxFlex="100">
+    <form [formGroup]="temperatureForm" (ngSubmit)="onSubmit(temperatureForm.value)" fxLayout="row wrap" class="p-1">
+
+      <div fxFlex="100" class="p-1">
+        <mat-form-field>
+            <input matInput autocomplete="off" placeholder="Température" formControlName="temperature" type="number" min="0">
+            <mat-error *ngIf="temperatureForm.controls['temperature'].errors?.required">Ce champ est obligatoire</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxFlex="100" class="p-1">
+        <button mat-raised-button color="primary" class="uppercase mx-1" type="submit">Sauver</button>
+      </div>
+
+    </form>
+  </mat-card>
+</div>
+
+<div fxLayout="row wrap">
+  <mat-card class="p-0" fxFlex="100">
+    <mat-card-title class="text-center"><h2>Température</h2></mat-card-title>
+
+    <mat-card-content>
+      <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-1">
+        <mat-form-field>
+          <mat-label>Date de la température</mat-label>
+          <input matInput [matDatepicker]="picker1" placeholder="Date de la température" (dateChange)="selectChanged($event)">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div fxLayout="row wrap" *ngIf="resultExist">
+  <p fxFlex="100" class="text-center temp">{{result}} °C</p>
+</div>
