@@ -26,7 +26,7 @@
     "@angular/router": "~9.0.5",
     "@angular/service-worker": "~9.0.5",
     "material-icons": "^0.3.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "ngx-embed-video": "^1.0.4",
     "ngx-perfect-scrollbar": "^9.0.0",
     "ngx-webcam": "^0.2.6",
